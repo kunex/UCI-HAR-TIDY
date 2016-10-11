@@ -88,12 +88,11 @@ OutputFolder <- "UCI HAR Output Tidy Data"
 if (!file.exists(OutputFolder)){
         dir.create(OutputFolder) }
 
-        write.csv(result1,"UCI HAR Output Tidy Data/tidy_dataset1.csv")
-        write.csv(result2,"UCI HAR Output Tidy Data/tidy_dataset2.csv")
+
+        write.table(result1,"UCI HAR Output Tidy Data/tidy_dataset1.txt",row.name=FALSE)
+        write.table(result2,"UCI HAR Output Tidy Data/tidy_dataset2.txt",row.name=FALSE)
 
         print("Execution complete, output files created in 'UCI HAR Output Tidy Data' folder.")
 
 }
-
-
 
