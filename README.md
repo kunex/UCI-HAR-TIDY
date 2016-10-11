@@ -17,7 +17,6 @@ Tomasz Kun 2016.10.10
 
 Function Details:
 run.analysis.R(folder_containing_UCI_HAR_dataset)
-folder_containing_UCI_HAR_dataset - parameter, directory where the "UCI HAR Dataset" is located.
 
 #### INPUT FILES
 
