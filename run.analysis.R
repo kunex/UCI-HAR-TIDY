@@ -1,9 +1,9 @@
 
-run_analysis.R <- function(folder_containing_UCI_HAR_dataset) {
+run_analysis <- function(folder_containing_UCI_HAR_dataset) {
 
 ####  pre set environment and check if files already exist
 
-  
+
         
 setwd(folder_containing_UCI_HAR_dataset)       
 
@@ -16,9 +16,7 @@ if (file.exists("UCI HAR Output Tidy Data/tidy_dataset1.csv")){
 if (file.exists("UCI HAR Output Tidy Data/tidy_dataset2.csv")){
                 stop("'tidy_dataset2.csv' result file already exists") }        
         
-library(lubridate)
 library(dplyr)
-library(xlsx)
 
 ####  load and prepare data sources
 
@@ -79,7 +77,7 @@ result1 <- f3
 
 ## 5 create independent dataset
 
-result2 <- select(result1, activity_name, subject, contains("mean")) %>% 
+result2 <- select(result1, activity_name, subject, contains("mean"),contains("std")) %>% 
         group_by(activity_name,subject) %>% 
         summarize_each(funs(mean))
 
